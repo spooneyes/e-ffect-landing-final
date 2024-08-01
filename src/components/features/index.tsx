@@ -108,7 +108,9 @@ const Content = ({
             {featureInView.callout}
           </span>
           <p className="my-3 text-5xl font-bold">{featureInView.title}</p>
-          <p className="text-slate-600">{featureInView.description}</p>
+          <p className="text-xl text-slate-600 md:text-2xl">
+            {featureInView.description}
+          </p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 25 }}
