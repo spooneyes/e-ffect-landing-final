@@ -139,7 +139,7 @@ const ExampleFeature = ({ featureInView }: { featureInView: FeatureType }) => {
       <img
         src={featureInView.imgSrc}
         alt=""
-        className=" h-96 rounded-xl object-cover"
+        className="flex w-full gap-1.5 rounded-t-xl  p-3"
       />
       {/* <span className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] text-9xl text-slate-700">
         <featureInView.Icon />
