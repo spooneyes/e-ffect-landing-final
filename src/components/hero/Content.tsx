@@ -80,8 +80,10 @@ export const Content = () => {
         }}
         className="flex flex-col items-center gap-4 sm:flex-row"
       >
+        {/* TODO */}
+        {/* Page pour rentrer son mail */}
         <SplashButton
-          onClick={() => router.push("/signin")}
+          onClick={() => router.push("/#")}
           className="flex items-center gap-2"
         >
           Join us

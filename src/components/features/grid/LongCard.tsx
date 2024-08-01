@@ -5,7 +5,6 @@ import { AnimationProps, motion } from "framer-motion";
 import {
   SiAuth0,
   SiBuildkite,
-  SiGithub,
   SiPlanetscale,
   SiReact,
   SiSupabase,

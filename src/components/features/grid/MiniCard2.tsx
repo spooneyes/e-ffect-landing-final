@@ -1,7 +1,6 @@
 import React from "react";
 import { Card } from "../../utils/Card";
 import { CalloutChip } from "../../utils/CalloutChip";
-import { SiTwitter } from "react-icons/si";
 import { CornerBlur } from "@/components/utils/CornerBlur";
 import { FaCirclePlus } from "react-icons/fa6";
 
