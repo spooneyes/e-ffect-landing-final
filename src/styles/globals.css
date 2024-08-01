@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.mask-with-browser-support {
+  mask: linear-gradient(black, black), linear-gradient(black, black);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+  -webkit-mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+}
+
+@keyframes glowEffectAnimation {
+  0% {
+    background-position-y: 0;
+  }
+
+  to {
+    background-position-y: 25%;
+  }
+}
+
+.glow {
+  background-image: radial-gradient(
+      90vw 60vh at -30vw 75vh,
+      rgba(189, 141, 10, 0.3) 1%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      90vw 60vh at 130vw 150vh,
+      rgba(189, 141, 10, 0.3) 1%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  background-position:
+    0px 0px,
+    0px 0px;
+  background-size: 100vw 200vh;
+  animation: glowEffectAnimation ease-in-out;
+  animation-timeline: scroll();
+}
