@@ -4,8 +4,15 @@ import { CalloutChip } from "../../utils/CalloutChip";
 import { motion } from "framer-motion";
 import { GiSoundWaves } from "react-icons/gi";
 import { BubbleButton } from "@/components/buttons/BubbleButton";
+import { DragCloseDrawer } from "@/components/modal/DragCloseDrawer";
 
-export const MiniCard1 = () => {
+export const MiniCard1 = ({
+  isOpen,
+  setOpen,
+}: {
+  isOpen: boolean;
+  setOpen: (value: boolean) => void;
+}) => {
   return (
     <div className="col-span-2 h-[375px] md:col-span-1">
       <Card>
@@ -16,7 +23,10 @@ export const MiniCard1 = () => {
         <p className="mb-6 text-center text-zinc-400">
           An AI assitant to help you practice and reproduce any preset you want.
         </p>
-        <BubbleButton className="mx-auto">🔒 Read more</BubbleButton>
+        <BubbleButton onClick={() => setOpen(true)} className="mx-auto">
+          Read more
+        </BubbleButton>
+
         <Ping />
       </Card>
     </div>
