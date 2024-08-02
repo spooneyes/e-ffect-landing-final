@@ -9,13 +9,7 @@ import { SectionHeading } from "@/components/utils/SectionHeading";
 import { SectionSubheading } from "@/components/utils/SectionSubheading";
 import { SectionHeadingSpacing } from "@/components/utils/SectionHeadingSpacing";
 
-export const Content = ({
-  isOpen,
-  setOpen,
-}: {
-  isOpen: boolean;
-  setOpen: (open: boolean) => void;
-}) => {
+export const Content = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   return (
     <section>
       <MaxWidthWrapper className="relative z-20 pb-20 pt-20 md:pb-28 md:pt-40">
@@ -32,7 +26,7 @@ export const Content = ({
           </SectionSubheading>
         </SectionHeadingSpacing>
 
-        <Grid isOpen={isOpen} setOpen={setOpen} />
+        <Grid setOpen={setOpen} />
         <div className="my-12 h-[1px] w-full bg-gradient-to-r from-blue-800/0 via-blue-400/50 to-blue-800/0 md:my-20" />
         <SimpleGrid />
       </MaxWidthWrapper>
@@ -40,17 +34,11 @@ export const Content = ({
   );
 };
 
-const Grid = ({
-  isOpen,
-  setOpen,
-}: {
-  isOpen: boolean;
-  setOpen: (open: boolean) => void;
-}) => (
+const Grid = ({ setOpen }: { setOpen: (open: boolean) => void }) => (
   <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
     <Tower />
     <div className="col-span-1 grid grid-cols-2 gap-4 lg:col-span-8 lg:grid-cols-2">
-      <MiniCard1 isOpen={isOpen} setOpen={setOpen} />
+      <MiniCard1 setOpen={setOpen} />
       <MiniCard2 />
       <LongCard />
     </div>

@@ -18,7 +18,10 @@ export const MiniCard2 = () => {
         <div className="absolute -bottom-2 left-2 right-2 z-10 flex h-44 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800/50 p-4">
           <img src="/model1.png" alt="Model 1" className="h-full" />
 
-          <FaCirclePlus className="absolute right-4 top-4 text-[#1F9AF1]" />
+          <FaCirclePlus
+            className="absolute bottom-4 left-4  text-[#1F9AF1]"
+            size={22}
+          />
         </div>
 
         <CornerBlur />

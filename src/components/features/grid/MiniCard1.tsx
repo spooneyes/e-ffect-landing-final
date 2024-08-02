@@ -4,13 +4,10 @@ import { CalloutChip } from "../../utils/CalloutChip";
 import { motion } from "framer-motion";
 import { GiSoundWaves } from "react-icons/gi";
 import { BubbleButton } from "@/components/buttons/BubbleButton";
-import { DragCloseDrawer } from "@/components/modal/DragCloseDrawer";
 
 export const MiniCard1 = ({
-  isOpen,
   setOpen,
 }: {
-  isOpen: boolean;
   setOpen: (value: boolean) => void;
 }) => {
   return (

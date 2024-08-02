@@ -8,7 +8,7 @@ export const FeatureGrid = () => {
 
   return (
     <div id="features" className="relative overflow-hidden">
-      <Content isOpen={open} setOpen={setOpen} />
+      <Content setOpen={setOpen} />
 
       {open && (
         <>
