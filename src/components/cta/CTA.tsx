@@ -1,7 +1,5 @@
 import React from "react";
 import { MaxWidthWrapper } from "../utils/MaxWidthWrapper";
-import { SplashButton } from "../buttons/SplashButton";
-import { FiArrowRight } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
 
 import { GhostButton } from "../buttons/GhostButton";

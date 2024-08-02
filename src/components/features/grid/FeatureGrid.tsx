@@ -5,9 +5,6 @@ import { AiContent } from "./ModalContent/AiContent";
 
 export const FeatureGrid = () => {
   const [open, setOpen] = React.useState(false);
-  useEffect(() => {
-    console.log("draw changed", open);
-  }, [open]);
 
   return (
     <div id="features" className="relative overflow-hidden">
