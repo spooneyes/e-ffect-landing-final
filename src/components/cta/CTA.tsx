@@ -79,7 +79,7 @@ export const CTA = () => {
           </GhostButton>
         </motion.div>
       </MaxWidthWrapper>
-      <div className="absolute inset-0 z-0 bg-grid-zinc-700/50" />
+      <div className="absolute inset-0 z-0 " />
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/0 to-zinc-950" />
     </section>
   );
