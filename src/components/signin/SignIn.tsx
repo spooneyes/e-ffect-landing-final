@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { CornerGrid } from "../utils/CornerGrid";
 import { NavLogo } from "../navbar/NavLogo";
 import Link from "next/link";
@@ -8,6 +9,14 @@ import { SplashButton } from "../buttons/SplashButton";
 import { FiArrowLeft } from "react-icons/fi";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+type Props = {};
+const requiredSchema = Yup.object({
+  email: Yup.string().email("Invalid email").required("Email is required"),
+});
 
 export const SignIn = () => {
   const router = useRouter();
@@ -41,13 +50,14 @@ export const SignIn = () => {
       >
         <Heading />
 
-        <SocialOptions />
-        <Or />
+        {/* <SocialOptions /> */}
+        {/* <Or /> */}
         <Email />
-        <Terms />
+
+        {/* <Terms /> */}
       </motion.div>
 
-      <CornerGrid />
+      {/* <CornerGrid /> */}
     </div>
   );
 };
@@ -56,13 +66,13 @@ const Heading = () => (
   <div>
     <NavLogo />
     <div className="mb-9 mt-6 space-y-1.5">
-      <h1 className="text-2xl font-semibold">Sign in to your account</h1>
-      <p className="text-zinc-400">
+      <h1 className="text-2xl font-semibold">Join the waitlist</h1>
+      {/* <p className="text-zinc-400">
         Don't have an account?{" "}
         <Link href="#" className="text-blue-400">
           Create one.
         </Link>
-      </p>
+      </p> */}
     </div>
   </div>
 );
@@ -94,20 +104,83 @@ const Or = () => {
 };
 
 const Email = () => {
+  const [status, setStatus] = useState<number | null>(null);
+  const [message, setMessage] = useState<string>("");
+  const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
+  const [submitting, setSubmitting] = useState<boolean>(false);
+  const [run, setRun] = useState<boolean>(false);
+  const [totalCounts, setTotalCounts] = useState<number>(400);
+  const [showConfetti, setShowConfetti] = useState<boolean>(false);
+
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
-      <div className="mb-3">
-        <label htmlFor="email-input" className="mb-1.5 block text-zinc-400">
-          Email
-        </label>
-        <input
-          id="email-input"
-          type="email"
-          placeholder="your.email@provider.com"
-          className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 placeholder-zinc-500 ring-1 ring-transparent transition-shadow focus:outline-0 focus:ring-blue-700"
-        />
-      </div>
-      <div className="mb-6">
+    <Formik
+      initialValues={{
+        email: "",
+      }}
+      validationSchema={requiredSchema}
+      onSubmit={async (values, { resetForm }) => {
+        setButtonDisabled(true);
+        try {
+          const response = await fetch("/api/newsletter", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: values?.email,
+            }),
+          });
+          const datas = await response.json();
+          if (datas.status >= 400) {
+            setStatus(datas.status);
+            setMessage(
+              "Error joining the newsletter. You can directly contact me at github@ebraj."
+            );
+            setTimeout(() => {
+              setMessage("");
+              setButtonDisabled(false);
+            }, 2000);
+            return;
+          }
+
+          setStatus(201);
+          setMessage("Thank you for subscribing 🎸.");
+          setShowConfetti(true);
+          setRun(true);
+          setTimeout(() => {
+            setTotalCounts(0);
+            setMessage("");
+            resetForm();
+            setButtonDisabled(false);
+          }, 4000);
+          setTotalCounts(400);
+        } catch (error) {
+          setStatus(500);
+          setMessage(
+            "Error joining the newsletter. You can directly contact me at emily@e-ffect.fr."
+          );
+          setTimeout(() => {
+            setMessage("");
+            setButtonDisabled(false);
+          }, 2000);
+        }
+      }}
+    >
+      <Form>
+        <div className="mb-3">
+          <label htmlFor="email-input" className="mb-1.5 block text-zinc-400">
+            Email
+          </label>
+
+          <Field
+            type="email"
+            name="email"
+            className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 placeholder-zinc-500 ring-1 ring-transparent transition-shadow focus:outline-0 focus:ring-blue-700"
+            placeholder="Enter your email"
+            autoComplete="off"
+          />
+        </div>
+        {/* <div className="mb-6">
         <div className="mb-1.5 flex items-end justify-between">
           <label htmlFor="password-input" className="block text-zinc-400">
             Password
@@ -122,17 +195,31 @@ const Email = () => {
           placeholder="••••••••••••"
           className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 placeholder-zinc-500 ring-1 ring-transparent transition-shadow focus:outline-0 focus:ring-blue-700"
         />
-      </div>
-      <SplashButton type="submit" className="w-full">
-        Sign in
-      </SplashButton>
-    </form>
+      </div> */}
+        <SplashButton
+          disabled={buttonDisabled}
+          type="submit"
+          className="w-full"
+        >
+          {submitting ? "Joining" : "Join us"}
+        </SplashButton>
+        {message && (
+          <p
+            className={`${
+              status !== 201 ? "text-red-500" : "text-green-500"
+            } pt-4 font-bold `}
+          >
+            {message}
+          </p>
+        )}
+      </Form>
+    </Formik>
   );
 };
 
 const Terms = () => (
   <p className="mt-9 text-xs text-zinc-400">
-    By signing in, you agree to our{" "}
+    By joining in, you agree to our{" "}
     <Link href="#" className="text-blue-400">
       Terms & Conditions
     </Link>{" "}

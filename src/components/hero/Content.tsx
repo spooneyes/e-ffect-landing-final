@@ -5,7 +5,6 @@ import { SplashButton } from "../buttons/SplashButton";
 import { GhostButton } from "../buttons/GhostButton";
 import { GlowingChip } from "../utils/GlowingChip";
 import { useRouter } from "next/router";
-import Example from "../utils/Input";
 
 export const Content = () => {
   const router = useRouter();
@@ -83,7 +82,7 @@ export const Content = () => {
         {/* TODO */}
         {/* Page pour rentrer son mail */}
         <SplashButton
-          onClick={() => router.push("/#")}
+          onClick={() => router.push("/join")}
           className="flex items-center gap-2"
         >
           Join us
@@ -93,7 +92,7 @@ export const Content = () => {
           onClick={() => router.push("/#features")}
           className="rounded-md px-4 py-2 text-lg text-zinc-100"
         >
-          Learn more
+          About our product
         </GhostButton>
       </motion.div>
       <motion.div
