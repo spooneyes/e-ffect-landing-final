@@ -25,7 +25,7 @@ export const Content = () => {
         }}
         className="relative"
       >
-        <GlowingChip>Introducing W4P 🎸</GlowingChip>
+        <GlowingChip>Introducing W4P</GlowingChip>
       </motion.div>
       <motion.h1
         initial={{

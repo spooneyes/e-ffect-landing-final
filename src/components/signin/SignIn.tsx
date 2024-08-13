@@ -144,7 +144,7 @@ const Email = () => {
           }
 
           setStatus(201);
-          setMessage("Thank you for subscribing 🎸.");
+          setMessage("Thank you for subscribing.");
           setShowConfetti(true);
           setRun(true);
           setTimeout(() => {
@@ -206,7 +206,7 @@ const Email = () => {
         {message && (
           <p
             className={`${
-              status !== 201 ? "text-red-500" : "text-green-500"
+              status !== 201 ? "text-red-500" : "text-zinc-200"
             } pt-4 font-bold `}
           >
             {message}

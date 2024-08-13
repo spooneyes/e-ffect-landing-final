@@ -27,7 +27,7 @@ export const CTA = () => {
           }}
           className="relative mb-3"
         >
-          <GlowingChip>Introducing W4P 🎸</GlowingChip>
+          <GlowingChip>Introducing W4P</GlowingChip>
         </motion.div>
         <motion.h1
           initial={{
