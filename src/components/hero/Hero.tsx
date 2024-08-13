@@ -1,4 +1,4 @@
-import { GradientGrid } from "./GradientGrid";
+// import { GradientGrid } from "./GradientGrid";
 import { Beams } from "../utils/Beams";
 import { Content } from "./Content";
 

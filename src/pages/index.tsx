@@ -1,15 +1,9 @@
-import BasicFAQ from "@/components/FAQ";
 import { CTA } from "@/components/cta/CTA";
-import { Customers } from "@/components/customers/Customers";
 import Features from "@/components/features";
-import Carousel from "@/components/features/carousel/Carousel";
-import { CodeDemo } from "@/components/features/code/CodeDemo";
 import { FeatureGrid } from "@/components/features/grid/FeatureGrid";
-import { Stats } from "@/components/features/stats/Stats";
 import { Footer } from "@/components/footer/Footer";
 import { Hero } from "@/components/hero/Hero";
-import { Logos } from "@/components/logos/Logos";
-import { Pricing } from "@/components/pricing/Pricing";
+
 import { Video } from "@/components/video/Video";
 import { Barlow } from "next/font/google";
 
@@ -18,6 +12,11 @@ const barlowFont = Barlow({
   style: ["italic", "normal"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
+
+export const metadata = {
+  title: "E-ffect",
+  description: "E-ffect - Discover our product : The W4P",
+};
 
 export default function Home() {
   return (
