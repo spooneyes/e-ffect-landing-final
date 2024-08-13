@@ -4,7 +4,11 @@ import { CalloutChip } from "../../utils/CalloutChip";
 import { CornerBlur } from "@/components/utils/CornerBlur";
 import { FaCirclePlus } from "react-icons/fa6";
 
-export const MiniCard2 = () => {
+export const MiniCard2 = ({
+  setOpen,
+}: {
+  setOpen: (value: boolean) => void;
+}) => {
   return (
     <div className="col-span-2 h-[415px] sm:h-[375px] md:col-span-1">
       <Card>
@@ -19,7 +23,8 @@ export const MiniCard2 = () => {
           <img src="/model1.png" alt="Model 1" className="h-full" />
 
           <FaCirclePlus
-            className="absolute bottom-4 left-4  text-[#1F9AF1]"
+            onClick={() => setOpen(true)}
+            className="absolute bottom-4 left-4  cursor-pointer text-[#1F9AF1]"
             size={22}
           />
         </div>
