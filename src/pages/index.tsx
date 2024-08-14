@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { CTA } from "@/components/cta/CTA";
 import Features from "@/components/features";
 import { FeatureGrid } from "@/components/features/grid/FeatureGrid";
@@ -15,24 +16,31 @@ const barlowFont = Barlow({
 
 export const metadata = {
   title: "E-ffect",
-  description: "E-ffect - Discover our product : The W4P",
+  description:
+    "We are happy to introduce our new product : W4P. Discover it now !",
 };
 
 export default function Home() {
   return (
-    <main className={barlowFont.className}>
-      <Hero />
-      {/* <Logos /> */}
-      <FeatureGrid />
-      <Features />
-      {/* <BasicFAQ /> */}
-      {/* <Carousel /> */}
-      {/* <Customers /> */}
-      {/* <Stats /> */}
-      {/* <Pricing /> */}
-      <Video />
-      <CTA />
-      <Footer />
-    </main>
+    <>
+      <Head>
+        <meta name="description" content={metadata.description} />
+        <title>{metadata.title}</title>
+      </Head>
+      <main className={barlowFont.className}>
+        <Hero />
+        {/* <Logos /> */}
+        <FeatureGrid />
+        <Features />
+        {/* <BasicFAQ /> */}
+        {/* <Carousel /> */}
+        {/* <Customers /> */}
+        {/* <Stats /> */}
+        {/* <Pricing /> */}
+        <Video />
+        <CTA />
+        <Footer />
+      </main>
+    </>
   );
 }
