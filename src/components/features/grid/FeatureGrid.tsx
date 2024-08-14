@@ -15,7 +15,7 @@ export const FeatureGrid = () => {
       {open && (
         <>
           <DragCloseDrawer open={open} setOpen={setOpen}>
-            <AiContent />
+            <BouncyCardsFeatures />
           </DragCloseDrawer>
         </>
       )}

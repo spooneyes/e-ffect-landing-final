@@ -45,7 +45,7 @@ export const CTA = () => {
           }}
           className="mb-9 max-w-xl text-center text-3xl font-bold leading-tight text-zinc-50 sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight"
         >
-          Joins Us in Innovation!
+          Join us for Innovation!
         </motion.h1>
         <motion.div
           initial={{
@@ -75,7 +75,7 @@ export const CTA = () => {
             className="flex items-center space-x-2 rounded-md px-4 py-2 text-lg text-zinc-100"
           >
             <FaInstagram className="" />
-            <span>Join us</span>
+            <span>Instagram</span>
           </GhostButton>
         </motion.div>
       </MaxWidthWrapper>

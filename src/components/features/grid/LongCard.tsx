@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react";
 import { CalloutChip } from "../../utils/CalloutChip";
 import { Card } from "../../utils/Card";
 import { AnimationProps, motion } from "framer-motion";
-import {
-  SiAuth0,
-  SiBuildkite,
-  SiPlanetscale,
-  SiReact,
-  SiSupabase,
-  SiTwilio,
-  SiZapier,
-} from "react-icons/si";
 
+import { MdOutlineComputer } from "react-icons/md";
 import { GiMusicalNotes } from "react-icons/gi";
+import { BiSolidGuitarAmp } from "react-icons/bi";
+import { TbAdjustments } from "react-icons/tb";
+import { IoPhonePortrait, IoHeadset } from "react-icons/io5";
 
 export const LongCard = () => {
   return (
@@ -20,8 +15,11 @@ export const LongCard = () => {
       <Card>
         <div className="relative z-20">
           <CalloutChip>Integrations</CalloutChip>
-          <p className="mb-1.5 text-2xl">E-ffect Cloud</p>
-          <p className="max-w-sm text-zinc-400"></p>
+          <p className="mb-1.5 text-2xl">Elevate your sound </p>
+          <p className="max-w-sm text-zinc-400">
+            Sync your pedal to your music, our app, and more for an immersive
+            audio experience like never before.
+          </p>
         </div>
         <div className="absolute bottom-0 right-0 top-0 z-10 w-48 bg-gradient-to-r from-zinc-950/0 to-zinc-950" />
         <SpinningLogos />
@@ -167,25 +165,19 @@ const ICON_DATA = [
     Icon: GiMusicalNotes,
   },
   {
-    Icon: SiTwilio,
+    Icon: MdOutlineComputer,
   },
   {
-    Icon: SiReact,
+    Icon: TbAdjustments,
   },
   {
-    Icon: SiZapier,
+    Icon: IoPhonePortrait,
   },
   {
-    Icon: SiAuth0,
+    Icon: IoHeadset,
   },
   {
-    Icon: SiPlanetscale,
-  },
-  {
-    Icon: SiSupabase,
-  },
-  {
-    Icon: SiBuildkite,
+    Icon: BiSolidGuitarAmp,
   },
 ];
 
