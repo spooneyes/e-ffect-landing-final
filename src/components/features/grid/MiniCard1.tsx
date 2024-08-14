@@ -16,9 +16,9 @@ export const MiniCard1 = ({
         <div className="mx-auto w-fit">
           <CalloutChip>Powered by AI</CalloutChip>
         </div>
-        <p className="mb-1.5 text-center text-2xl">Ai Assistant</p>
+        <p className="mb-1.5 text-center text-2xl">The W4P Assistant</p>
         <p className="mb-6 text-center text-zinc-400">
-          An AI assitant to help you practice and reproduce any preset you want.
+          An assitant to help you practice and reproduce any preset you want.
         </p>
         <BubbleButton onClick={() => setOpen(true)} className="mx-auto">
           Read more
