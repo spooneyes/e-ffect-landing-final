@@ -20,7 +20,7 @@ export const NavCTAs = () => {
         Sign in
       </SplashButton> */}
       <GhostButton
-        onClick={() => router.push("/signin")}
+        onClick={() => router.push("/#")}
         className="rounded-md px-4 py-1 text-base"
       >
         Kickstarter
