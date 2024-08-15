@@ -17,30 +17,30 @@ export const Footer = () => {
               title: "Features",
               href: "/#features",
             },
-            {
-              title: "Testimonials",
-              href: "/#testimonials",
-            },
-            {
-              title: "Pricing",
-              href: "/#pricing",
-            },
+            // {
+            //   title: "Testimonials",
+            //   href: "/#testimonials",
+            // },
+            // {
+            //   title: "Pricing",
+            //   href: "/#pricing",
+            // },
           ]}
         />
         <GenericColumn
           title="Company"
           links={[
+            // {
+            //   title: "Careers",
+            //   href: "/#",
+            // },
+            // {
+            //   title: "Team",
+            //   href: "/#",
+            // },
             {
-              title: "Careers",
-              href: "/#",
-            },
-            {
-              title: "Team",
-              href: "/#",
-            },
-            {
-              title: "Contact",
-              href: "/#",
+              title: "Join us",
+              href: "/join",
             },
           ]}
         />
@@ -51,14 +51,14 @@ export const Footer = () => {
               title: "Terms & Conditions",
               href: "/#",
             },
-            {
-              title: "Privacy Policy",
-              href: "/#",
-            },
-            {
-              title: "Refund Policy",
-              href: "/#",
-            },
+            // {
+            //   title: "Privacy Policy",
+            //   href: "/#",
+            // },
+            // {
+            //   title: "Refund Policy",
+            //   href: "/#",
+            // },
           ]}
         />
 
