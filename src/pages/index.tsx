@@ -37,7 +37,7 @@ export default function Home() {
         {/* <Customers /> */}
         {/* <Stats /> */}
         {/* <Pricing /> */}
-        <Video />
+        {/* <Video /> */}
         <CTA />
         <Footer />
       </main>
