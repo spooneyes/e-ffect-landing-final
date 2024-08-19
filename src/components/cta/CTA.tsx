@@ -70,13 +70,16 @@ export const CTA = () => {
             Try it free
             <FiArrowRight />
           </SplashButton> */}
-          <GhostButton
-            onClick={() => router.push("/#features")}
-            className="flex items-center space-x-2 rounded-md px-4 py-2 text-lg text-zinc-100"
+          <a
+            href="https://www.instagram.com/e_ffect.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <FaInstagram className="" />
-            <span>Instagram</span>
-          </GhostButton>
+            <GhostButton className="flex items-center space-x-2 rounded-md px-4 py-2 text-lg text-zinc-100">
+              <FaInstagram className="" />
+              <span>Instagram</span>
+            </GhostButton>
+          </a>
         </motion.div>
       </MaxWidthWrapper>
       <div className="absolute inset-0 z-0 " />

@@ -72,7 +72,7 @@ export const Footer = () => {
             // },
             {
               title: "Instagram",
-              href: "/#",
+              href: "https://www.instagram.com/e_ffect.fr/",
               Icon: SiInstagram,
             },
             // {
